@@ -21,7 +21,7 @@ function Counter() {
   function reset(){
     setCount(0);
   }
-  function restart(){
+  function resume(){
     setCount(count+1)
     
 
@@ -45,7 +45,7 @@ function Counter() {
             <div className="buttonDiv ">
             <button onClick={stop}  className='btn btn-danger'style={{marginLeft:"120px",marginTop:"20px"}}>STOP</button>
             <button onClick={reset} className='btn btn-warning'style={{marginLeft:"60px",marginTop:"20px"}}>RESET</button>
-            <button onClick={restart} className='btn btn-warning'style={{marginLeft:"60px",marginTop:"20px"}}>RESTART</button>
+            <button onClick={resume} className='btn btn-warning'style={{marginLeft:"60px",marginTop:"20px"}}>RESTART</button>
 
             </div>
         </div>
