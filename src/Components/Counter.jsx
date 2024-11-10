@@ -3,23 +3,28 @@ import React, { useEffect, useState } from 'react'
 function Counter() {
     //Declare state for the counter value
   const [count, setCount] = useState(0);
-
+  var interval;
   // Use useEffect to create an interval that updates the counter every second
   useEffect(() => {
-    const interval= setInterval(() => {
-      setCount(prevCount=>prevCount + 1); // Increment the count by 1
+      interval= setInterval(() => {
+      setCount(count + 1); // Increment the count by 1
     }, 1000);
 
     // Cleanup the interval when the component unmounts
     return () => clearInterval(interval);
-  }, []);
+  });
 
   function stop(){
-    
+    clearInterval(interval);
 
   }
   function reset(){
     setCount(0);
+  }
+  function restart(){
+    setCount(count+1)
+    
+
   }
     
   return (
@@ -40,6 +45,8 @@ function Counter() {
             <div className="buttonDiv ">
             <button onClick={stop}  className='btn btn-danger'style={{marginLeft:"120px",marginTop:"20px"}}>STOP</button>
             <button onClick={reset} className='btn btn-warning'style={{marginLeft:"60px",marginTop:"20px"}}>RESET</button>
+            <button onClick={restart} className='btn btn-warning'style={{marginLeft:"60px",marginTop:"20px"}}>RESTART</button>
+
             </div>
         </div>
         <div className="col-4"></div>
